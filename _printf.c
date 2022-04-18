@@ -19,6 +19,25 @@ int _printf(const char *format, ...)
     va_start(arguments, format);
     assert(invalidInputs(p));
     for (; *p; p++)
-
+    {
+		if (*p == '%')
+		{
+			p++;
+			if (*p == '%')
+			{
+				len += _putchar('%');
+				continue;
+			}
+			while (get_flags(*p, &prefixes))
+				p++;
+			printFunc = get_print(*p);
+			len += (printFunc)
+				? printFunc(arguments, &prefixes)
+				: _printf("%%%c", *p);
+		} else
+			len += _putchar(*p);
+	}
+	_putchar(FLUSH);
+	va_end(arguments);
+	return (len);
 }
-
