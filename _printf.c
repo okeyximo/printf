@@ -18,6 +18,7 @@ int _printf(const char *format, ...)
 
     va_start(arguments, format);
     assert(invalidInputs(p));
-    
+    for (; *p; p++)
+
 }
 
