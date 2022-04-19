@@ -5,7 +5,7 @@
  * conversion specifier passed to _printf
  * @s: character that holds the conversion specifier
  * Description: the function loops through the structs array
- * func_arr[] to find a match betwwen the specifier passed to _printf
+ * func_arr[] to find a match between the specifier passed to _printf
  * and the first element of the struct, and then the appropriate
  * printing function
  * Return: a pointer to the matching printing function
@@ -29,6 +29,7 @@ int (*get_print(char s))(va_list, mods *)
             {'%', print_percent},
             {NUL, NULL}
             };
+    
     register short i;
 
     for (i = 0; func_arr[i].c; i++)
