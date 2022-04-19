@@ -18,8 +18,8 @@
 
 typedef enum
 {
-    false,
-    true;
+	false,
+	true;
 } bool;
 
 /**
