@@ -16,6 +16,12 @@
 #define KILOBYTE 1024
 #define ABS(x) (((x) < 0) ? -(x) : (x))
 
+typedef enum
+{
+    false,
+    true;
+} bool;
+
 /**
  * struct modifiers - struct containing flags to "turn on"
  * when a flag specifier is passed to _printf()
@@ -23,17 +29,11 @@
  * @space: flag for the ' ' character
  * @hash: flag for the '#' character
  */
-typedef enum
-{
-    false,
-    true;
-} _Bool;
-
 typedef struct modifiers
 {
-	_Bool plus;
-	_Bool space;
-	_Bool hash;
+	bool plus;
+	bool space;
+	bool hash;
 } mods;
 
 /**
@@ -84,7 +84,7 @@ int _puts(char *str);
 int print_rot13(va_list l, mods *f);
 int print_rev(va_list l, mods *f);
 int print_bigS(va_list l, mods *f);
-_Bool isNonAlphaNumeric(char c);
+bool isNonAlphaNumeric(char c);
 
 /* print_address */
 int print_address(va_list l, mods *f);
@@ -93,7 +93,7 @@ int print_address(va_list l, mods *f);
 int print_percent(va_list l, mods *f);
 
 /* assertions */
-_Bool invalidInputs(const char *p);
+bool invalidInputs(const char *p);
 
 /* unit_tests */
 void tusBasicTester(void);
