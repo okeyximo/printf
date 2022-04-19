@@ -11,7 +11,7 @@
 
 int get_flags(char s, mods *f)
 {
-    _Bool modifier = true;
+    bool modifier = true;
 
     switch (s)
     {
@@ -21,5 +21,7 @@ int get_flags(char s, mods *f)
         case '':
                 f->space = true;
                 break;
+        case '#':
+    
     }
 }
