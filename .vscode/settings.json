@@ -1,3 +1,6 @@
 {
-    "C_Cpp.errorSquiggles": "Disabled"
+    "C_Cpp.errorSquiggles": "Disabled",
+    "betty.bettyapp": "undefined",
+    "betty.username": "undefined",
+    "betty.apikey": "undefined"
 }
