@@ -16,6 +16,12 @@
 #define KILOBYTE 1024
 #define ABS(x) (((x) < 0) ? -(x) : (x))
 
+typedef enum
+{
+    false,
+    true;
+} bool;
+
 /**
  * struct modifiers - struct containing flags to "turn on"
  * when a flag specifier is passed to _printf()
@@ -23,12 +29,6 @@
  * @space: flag for the ' ' character
  * @hash: flag for the '#' character
  */
-typedef enum
-{
-    false,
-    true;
-} bool; 
-
 typedef struct modifiers
 {
 	bool plus;

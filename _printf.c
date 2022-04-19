@@ -10,16 +10,16 @@
  */
 int _printf(const char *format, ...)
 {
-    register short len = 0;
-    int (*printFunc)(va_list, mods *);
-    mods prefixes = PF_INIT;
-    const char *p = format;
-    va_list arguments;
+	register short len = 0;
+	int (*printFunc)(va_list, mods *);
+	mods prefixes = PF_INIT;
+	const char *p = format;
+	va_list arguments;
 
-    va_start(arguments, format);
-    assert(invalidInputs(p));
-    for (; *p; p++)
-    {
+	va_start(arguments, format);
+	assert(invalidInputs(p));
+	for (; *p; p++)
+	{
 		if (*p == '%')
 		{
 			p++;
