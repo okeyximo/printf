@@ -27,7 +27,7 @@ typedef enum
 {
     false,
     true;
-} _Bool; 
+} _Bool;
 
 typedef struct modifiers
 {
