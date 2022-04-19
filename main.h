@@ -4,7 +4,7 @@
 #include <stdlib.h>
 #include <stdarg.h>
 #include <assert.h>
-#include <stdbool.h>
+/*#include <stdbool.h>*/
 
 /* macros */
 #define FLUSH -1
@@ -23,6 +23,12 @@
  * @space: flag for the ' ' character
  * @hash: flag for the '#' character
  */
+typedef enum
+{
+    false,
+    true;
+} _Bool; 
+
 typedef struct modifiers
 {
 	_Bool plus;
