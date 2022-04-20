@@ -13,7 +13,7 @@
 int print_bigS(va_list l, mods *f)
 {
 	register short len = 0;
-	char *res, *s = va_arg(l, char *);
+	char *res, *s = va_arg(l, char *), count;
 
 	(void)f;
 	if (!s)

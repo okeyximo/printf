@@ -1,4 +1,4 @@
-#include "main.c"
+#include "main.h"
 
 /**
  * print_int - prints an integer
@@ -31,7 +31,7 @@ int print_int(va_list l, mods *f)
  * Return: number of char printed
  */
 
-int print_unsigned(va_list l, mod *f)
+int print_unsigned(va_list l, mods *f)
 {
 	unsigned int u = va_arg(l, unsigned int);
 	char *str = convert(u, 10, 0);
