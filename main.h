@@ -8,7 +8,7 @@
 
 /* macros */
 #define FLUSH -1
-#define PF_INIT {false, false, false}
+#define PF_INIT {0, 0, 0}
 #define NIL "(nil)"
 #define HEXA "0x"
 #define NULL_STRING "(null)"
