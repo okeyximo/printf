@@ -13,7 +13,7 @@ int _printf(const char *format, ...)
 	register int len = 0;
 	int (*printFunc)(va_list, mods *);
 	mods prefixes = PF_INIT;
-	const char *p = *format;
+	const char *p;
 	va_list arguments;
 
 	va_start(arguments, format);
@@ -22,7 +22,7 @@ int _printf(const char *format, ...)
 		return (-1);
 	if (format[0] == '%' && format[1] == ' ' && !format[2])
 		return (-1);
-	for (; *p; p++)
+	for (p = format; *p; p++)
 	{
 		if (*p == '%')
 		{
