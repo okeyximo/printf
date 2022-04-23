@@ -16,7 +16,12 @@
 #define KILOBYTE 1024
 #define ABS(x) (((x) < 0) ? -(x) : (x))
 
-typedef enum
+/**
+ * enum booleans - enum for booleans values
+ * @false: false
+ * @true: true
+ */
+typedef enum booleans
 {
 	false,
 	true
