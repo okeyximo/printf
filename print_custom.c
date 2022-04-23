@@ -12,38 +12,29 @@
  */
 int print_bigS(va_list l, mods *f)
 {
-	register short len = 0;
-	char *res, *s = va_arg(l, char *), count;
+	int i, count = 0;
+	char *res, *s = va_arg(l, char *);
 
 	(void)f;
 	if (!s)
 		return (_puts(NULL_STRING));
-	for (; *s; s++)
+	for (i = 0; s[i]; i++)
 	{
-		if (isNonAlphaNumeric(*s))
+		if (s[i] > 0 && (s[i] < 32 || s[i] >= 127))
 		{
-			count += _puts("\\x");
-			res = convert(*s, 16, 0);
+			_puts("\\x");
+			count += 2;
+			res = convert(s[i], 16, 0);
 			if (!res[1])
-				len += _putchar('0');
-			len += _puts(res);
+				count += _putchar('0');
+			count += _puts(res);
 		}
 		else
-			len += _putchar(*s);
+			count += _putchar(*s);
 	}
-	return (len);
+	return (count);
 }
 
-/**
- * isNonAlphaNumeric - determines if char is a non-
- * alphanumeric char on ASCII table
- * @c: input char
- * Return: true or false
- */
-bool isNonAlphaNumeric(char c)
-{
-	return ((c > 0 && c < 32) || c >= 127);
-}
 
 /**
  * print_rev - prints a string in reverse
@@ -54,17 +45,22 @@ bool isNonAlphaNumeric(char c)
  */
 int print_rev(va_list l, mods *f)
 {
-	register short len = 0, j;
+	int i = 0, j;
 	char *s = va_arg(l, char *);
 
 	(void)f;
 	if (!s)
-		s = NULL_STRING;
-	while (s[len])
-		len++;
-	for (j = len - 1; j >= 0; j--)
+		s = "(null)";
+
+	while (s[i])
+		i++;
+
+	for (j = i - 1; j >= 0; j--)
 		_putchar(s[j]);
-	return (len);
+
+	return (i);
+
+
 }
 
 /**
