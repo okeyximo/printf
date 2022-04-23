@@ -11,14 +11,15 @@
  */
 int _putchar(char c)
 {
-	static char buf[KILOBYTE];
+	static char buf[1024];
 	static int i;
 
-	if (c == FLUSH || i >= KILOBYTE)
+	if (c == -1 || i >= 1024)
 	{
 		write(1, &buf, i);
 		i = 0;
-	} else
+	}
+	if (c != -1)
 	{
 		buf[i] = c;
 		i++;
@@ -33,9 +34,9 @@ int _putchar(char c)
  */
 int _puts(char *str)
 {
-	register short i;
+	register int i;
 
-	for (i = 0; str[i]; i++)
+	for (i = 0; str[i] != '\0'; i++)
 		_putchar(str[i]);
 	return (i);
 }
